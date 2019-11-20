@@ -32,7 +32,7 @@ setup(
     zip_safe=False,
     keywords='django ambition EDC permissions',
     install_requires=[
-        'edc-permissions'],
+        'edc-auth'],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
