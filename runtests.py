@@ -66,7 +66,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "edc_locator.apps.AppConfig",
         "edc_metadata.apps.AppConfig",
         "edc_metadata_rules.apps.AppConfig",
-        # "edc_navbar.apps.AppConfig",
+        "edc_navbar.apps.AppConfig",
         "edc_notification.apps.AppConfig",
         "edc_offstudy.apps.AppConfig",
         "edc_pharmacy.apps.AppConfig",
