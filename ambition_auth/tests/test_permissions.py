@@ -18,7 +18,6 @@ from edc_auth import (
 )
 
 from edc_auth.codenames import (
-    ae,
     ae_review,
     account_manager,
     everyone,
@@ -31,17 +30,20 @@ from edc_auth.codenames import (
 )
 
 from ..codenames import (
+    ae,
     auditor,
     clinic,
     screening,
 )
-from ..codenames_by_group import codenames_by_group
+from ..codenames_by_group import get_codenames_by_group
 
 
 class TestPermissions(TestCase):
     @classmethod
     def setUpClass(cls):
-        GroupPermissionsUpdater(codenames_by_group=codenames_by_group, verbose=True)
+        GroupPermissionsUpdater(
+            codenames_by_group=get_codenames_by_group(), verbose=True
+        )
         return super(TestPermissions, cls).setUpClass()
 
     def test_pii(self):
@@ -78,6 +80,7 @@ class TestPermissions(TestCase):
             group_name=ACCOUNT_MANAGER, expected=account_manager
         )
 
+    @tag("1")
     def test_clinic(self):
         # update_permissions()
         compare_codenames_for_group(group_name=CLINIC, expected=clinic)
